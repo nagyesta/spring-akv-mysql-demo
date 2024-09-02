@@ -12,6 +12,7 @@ services:
     environment:
       LOWKEY_ARGS: "--server.port=10543 --app.token.port=10544 
         --LOWKEY_VAULT_NAMES=- --LOWKEY_IMPORT_LOCATION=/data/keyvault.json.hbs"
+
   mysql:
     container_name: spring-akv-example-mysql
     image: mysql:8.0.39
