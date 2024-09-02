@@ -1,0 +1,14 @@
+spring.application.name: spring-akv-mysql-demo
+
+spring.cloud.azure.keyvault.secret:
+  client.application-id: example
+  property-source-enabled: true
+  property-sources[0]:
+    endpoint: http://real-azure-key-vault-endpoint-url
+    refresh-interval: PT10S
+    secret-keys:
+    - spring-datasource-url
+    - spring-datasource-driver-class-name
+    - spring-datasource-username
+    - spring-datasource-password
+    service-version: V7_5

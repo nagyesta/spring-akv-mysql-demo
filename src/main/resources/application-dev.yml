@@ -1,0 +1,7 @@
+# DEV profile overrides
+
+# Use Lowkey Vault
+spring.cloud.azure.keyvault.secret:
+  property-sources[0]:
+    challenge-resource-verification-enabled: false
+    endpoint: https://localhost:10543/
