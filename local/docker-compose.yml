@@ -3,7 +3,7 @@ version: "3"
 services:
   lowkey-vault:
     container_name: spring-akv-example-lowkey-vault
-    image: nagyesta/lowkey-vault:2.5.6
+    image: nagyesta/lowkey-vault:2.5.6@sha256:30425d5186f37784793eae41b2cfe6dcd0e24fdf33a23347bc1e96e562bcf7ed
     ports:
       - "10543:10543"
       - "10544:10544"
@@ -15,7 +15,7 @@ services:
 
   mysql:
     container_name: spring-akv-example-mysql
-    image: mysql:8.0.39
+    image: mysql:8.0.39@sha256:ccb8f749bb5e59f9f8f03bf7282c7ef27a93a1814a24f0a8a926fb4e19b7fb97
     command: --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_ROOT_PASSWORD: NOT_A_SECRET_5b8538b6-2bf1-4d38-94f0-308d4fbb757b
