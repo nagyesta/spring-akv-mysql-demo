@@ -15,7 +15,7 @@ services:
 
   mysql:
     container_name: spring-akv-example-mysql
-    image: mysql:8.0.39
+    image: mysql:8.4.2@sha256:ac80b6e09e5b12b4f9d5cd4f6425e43464247aa4ba4f6169da5daf59e5877f7d
     command: --default-authentication-plugin=mysql_native_password
     environment:
       MYSQL_ROOT_PASSWORD: NOT_A_SECRET_5b8538b6-2bf1-4d38-94f0-308d4fbb757b
