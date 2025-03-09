@@ -19,25 +19,13 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
           fetch-depth: 0
-      - name: Set up JDK 17
+      - name: Set up JDK 21
         uses: actions/setup-java@3a4f6e1af504cf6a31855fa899c6aa5355ba6c12 # v4.7.0
         with:
           distribution: temurin
-          java-version: 17
+          java-version: 21
       - name: Set up Gradle
         uses: gradle/actions/setup-gradle@94baf225fe0a508e581a564467443d0e2379123b # v4.3.0
-      - name: Start Lowkey Vault
-        working-directory: ./local
-        run: |
-          docker compose up -d
-          sleep 10
-          docker ps
-          if [ $(docker ps | grep nagyesta | wc -l) -ne 1 ]; then echo "ERROR: Some containers are not running"; exit 1; fi
       - name: Build project with Gradle
         run: |
           ./gradlew bootRun
-      - name: Stop container
-        if: always()
-        working-directory: ./local
-        run: |
-          docker compose down

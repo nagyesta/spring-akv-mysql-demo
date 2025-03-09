@@ -1,5 +1,3 @@
-version: "3"
-
 services:
   lowkey-vault:
     container_name: spring-akv-example-lowkey-vault
@@ -15,8 +13,7 @@ services:
 
   mysql:
     container_name: spring-akv-example-mysql
-    image: mysql:8.0.41
-    command: --default-authentication-plugin=mysql_native_password
+    image: mysql:9.2.0
     environment:
       MYSQL_ROOT_PASSWORD: NOT_A_SECRET_5b8538b6-2bf1-4d38-94f0-308d4fbb757b
     ports:
